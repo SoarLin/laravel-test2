@@ -1,0 +1,15 @@
+{
+  "name": "laravel-eatme",
+  "version": "0.0.1",
+  "authors": [
+    "soar <soar.lin@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
