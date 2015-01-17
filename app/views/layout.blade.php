@@ -23,7 +23,7 @@
 
         <div class="collapse navbar-collapse" id="my-navbar">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="./">Home</a></li>
+            <li><a href="./">Home</a></li>
             <li><a href="./about">About</a></li>
             <li><a href="./contact">Contact</a></li>
           </ul>
@@ -31,7 +31,25 @@
       </div>
     </nav>
   </header>
-@yield('content')
+  @yield('content')
+  <div class="bottom-menu">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2 navbar-brand">
+          <a href="/">Learning Laravel</a>
+        </div>
+
+        <div class="col-md-10">
+          <ul class="bottom-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <script src="{{ asset('assets/bower/jquery/dist/jquery.min.js') }}"></script>
   <script src="{{ asset('assets/bower/bootstrap/dist/js/bootstrap.min.js') }}"></script>
