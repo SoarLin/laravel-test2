@@ -15,7 +15,19 @@ Route::get('/', function()
 {
     // return View::make('hello');
     // return "Hello! Welcome to my first app!";
-    return View::make('home');
+    // return View::make('home');
+    Schema::dropIfExists('tasks');
+    Schema::create('tasks', function($table)
+    {
+        $table->increments('id');
+        $table->string('title');
+        $table->text('body');
+        $table->decimal('amount', 7, 2);
+        $table->time('sunset');
+        // $table->dateTime('created_at');
+        // $table->timestamp('updated_at');
+        $table->timestamps();
+    });
 });
 
 Route::get('/about', function()
