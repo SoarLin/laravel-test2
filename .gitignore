@@ -5,5 +5,7 @@ composer.lock
 .env.*.php
 .env.php
 .DS_Store
+.tags
+.tags*
 Thumbs.db
 public/assets/bower/*

@@ -11,59 +11,14 @@
 |
 */
 
-Route::get('/', function()
-{
-    // return View::make('hello');
-    // return "Hello! Welcome to my first app!";
-    // return View::make('home');
-    Schema::dropIfExists('tasks');
-    Schema::create('tasks', function($table)
-    {
-        $table->increments('id');
-        $table->string('title');
-        $table->text('body');
-        $table->decimal('amount', 7, 2);
-        $table->time('sunset');
-        // $table->dateTime('created_at');
-        // $table->timestamp('updated_at');
-        $table->timestamps();
-    });
-});
+Route::model('task', 'Task');
 
-Route::get('/about', function()
-{
-    // return 'This is our about page';
-    return View::make('about');
-});
+Route::get('/', 'TasksController@home');
+Route::get('/create', 'TasksController@create');
+Route::get('/edit/{task}', 'TasksController@edit');
+Route::get('/delete/{task}', 'TasksController@delete');
+Route::get('/task/{id}', 'TasksController@show')->where('id','\d+');
 
-Route::get('/contact', function()
-{
-    // return 'This is our contact page';
-    return View::make('contact');
-});
-
-Route::post('contact', function()
-{
-    $data = Input::all();
-    $rules = array(
-        'subject' => 'required',
-        'message' => 'required'
-        );
-    $validator = Validator::make($data, $rules);
-
-    if ($validator->fails()) {
-        return Redirect::to('contact')->withErrors($validator)->withInput();
-    }
-
-    $emailcontent = array(
-        'subject' => $data['subject'],
-        'emailmessage' => $data['message']
-        );
-    Mail::send('emails.contactemail', $emailcontent, function($message)
-    {
-        $message->to('soar@eatme.tw', 'eatme_admin')
-                ->subject('Contact via Our Contact Form');
-    });
-
-    return 'Your message has been sent';
-});
+Route::post('/create', 'TasksController@saveCreate');
+Route::post('/edit', 'TasksController@doEdit');
+Route::post('/delete', 'TasksController@doDelete');
