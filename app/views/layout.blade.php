@@ -1,10 +1,34 @@
 <!doctype html>
 <html lang="zh-TW">
 <head>
-  <meta charset="UTF-8">
+  <!-- metas -->
   <title>另北的Laravel測試</title>
-  <link rel="stylesheet" href="{{ asset('assets/bower/bootstrap/dist/css/bootstrap.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('assets/custom/css/custom.css') }}">
+  <meta charset="utf-8">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+  <!--/ metas -->
+
+  <!-- favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+  <!--/ favicon -->
+
+  <!-- styles -->
+  {{ HTML::style('assets/bower/font-awesome/css/font-awesome.min.css') }}
+  {{ HTML::style('assets/bower/fancybox/source/jquery.fancybox.css') }}
+  {{ HTML::style('assets/bower/owlcarousel/owl-carousel/owl.carousel.css') }}
+  {{ HTML::style('assets/bower/slider-revolution/src/css/settings.css') }}
+  {{ HTML::style('assets/custom/css/main.css') }}
+  {{ HTML::style('assets/custom/css/color.css') }}
+  <!-- <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="css/jquery.fancybox.css">
+  <link rel="stylesheet" href="css/jquery.owl.carousel.css">
+  <link rel="stylesheet" href="js/rs-plugin/css/settings.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/color.css"> -->
+  <!--/ styles -->
+  <!-- <link rel="stylesheet" href="{{ asset('assets/bower/bootstrap/dist/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('assets/custom/css/custom.css') }}"> -->
 </head>
 <body>
   <header>
